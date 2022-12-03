@@ -23,10 +23,7 @@ function Out() {
           onChange={(event) => setPassword(event.target.value)}
         />
 
-        <button
-          className="mt-2 rounded-md bg-[#F35B04] px-8 py-3 text-xl font-semibold"
-          onClick={(e) => SignIn(e, email, password)}
-        >
+        <button className="button" onClick={(e) => SignIn(e, email, password)}>
           <div className="text-[#ffffff]">Login</div>
         </button>
       </form>

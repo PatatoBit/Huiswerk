@@ -5,7 +5,7 @@ function Nav() {
   return (
     <div className="absolute p-2">
       <Link href="/">
-        <h1 className="text-3xl font-bold">Huiswerk</h1>
+        <h1 className="text-3xl font-bold underline">Huiswerk</h1>
       </Link>
     </div>
   );

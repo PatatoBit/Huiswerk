@@ -15,7 +15,15 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
+        <>
+          <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
+          <p className="mt-5 max-w-3xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            assumenda alias doloribus sint non, esse quos sit facere a veritatis
+            maxime autem vitae commodi numquam! Repellat vero fugiat consectetur
+            consequuntur.
+          </p>
+        </>
       </Layout>
     </>
   );
