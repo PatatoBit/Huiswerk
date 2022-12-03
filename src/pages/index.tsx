@@ -1,18 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 
-import { useAuthState } from "react-firebase-hooks/auth";
-import In from "../components/admin/in";
-import Out from "../components/admin/Out";
-
-import { auth } from "../lib/firebase";
+import Layout from "../components/layout/page";
 
 const Home: NextPage = () => {
   // const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
-
-  const [user] = useAuthState(auth);
-
-  console.log(user);
 
   return (
     <>
@@ -22,13 +14,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <div className="flex min-h-screen w-full flex-col items-center justify-center">
-          <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
-
-          {user ? <In /> : <Out />}
-        </div>
-      </main>
+      <Layout>
+        <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
+      </Layout>
     </>
   );
 };
