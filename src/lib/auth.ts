@@ -24,3 +24,7 @@ export function SignIn(
       console.log(errorCode, errorMessage);
     });
 }
+
+export function SignOut() {
+  auth.signOut();
+}
