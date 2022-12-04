@@ -41,11 +41,13 @@ function Class() {
           <h1 className="p-2 text-2xl font-bold">{name}</h1>
 
           {students && (
-            <div className="grid grid-cols-2 gap-2 bg-kleren sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-2 bg-kleren sm:grid-cols-3 md:grid-cols-4">
               {students.map(
                 (student: { id: string; name: string; done: boolean }) => (
                   <Student done={student.done} key={student.id}>
-                    <h1 className="text-end text-2xl">{student.name}</h1>
+                    <h1 className="w-full text-center text-2xl">
+                      {student.name}
+                    </h1>
                   </Student>
                 )
               )}
