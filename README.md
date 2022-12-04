@@ -7,6 +7,10 @@ This is a program for keeping track of students on homework. Sounds evil.
 
 ## To-do List
 
+- [ ] Navigation
+  - [ ] Admin page
+  - [ ] Class that doesn't exist
+  - [ ] 404 page
 - [ ] Admin dashboard
   - [ ] Creating a new class
   - [ ] Deleting a class
@@ -14,7 +18,5 @@ This is a program for keeping track of students on homework. Sounds evil.
     - [ ] Toggling between done / undone
     - [ ] Add new students
     - [ ] Edit students name
-- [ ] Navigation
-  - [ ] Admin page
 - [ ] About page
 - [ ] Add funny stuffs?
