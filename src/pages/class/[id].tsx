@@ -19,6 +19,7 @@ const Student = styled("div")<{ done: boolean }>`
 function Class() {
   const [name, setName] = useState("");
   const [students, setStudents] = useState([]);
+  const [fraction, setFraction] = useState();
 
   const router = useRouter();
   const { id } = router.query;
@@ -29,6 +30,13 @@ function Class() {
         console.log(doc.data()?.students);
         setName(doc.data()?.name);
         setStudents(doc.data()?.students);
+        setFraction(
+          doc
+            .data()
+            ?.students.filter(
+              (student: { done: boolean }) => student.done == true
+            ).length
+        );
       });
       return () => unsub();
     }
@@ -38,20 +46,27 @@ function Class() {
     <Layout title={name}>
       <div className="max-w-2xl">
         <div className="w-full">
-          <h1 className="p-2 text-2xl font-bold">{name}</h1>
-
           {students && (
-            <div className="grid grid-cols-2 gap-2 bg-kleren sm:grid-cols-3 md:grid-cols-4">
-              {students.map(
-                (student: { id: string; name: string; done: boolean }) => (
-                  <Student done={student.done} key={student.id}>
-                    <h1 className="w-full text-center text-2xl">
-                      {student.name}
-                    </h1>
-                  </Student>
-                )
-              )}
-            </div>
+            <>
+              <div className="flex flex-row justify-between">
+                <h1 className="p-2 text-3xl font-bold">{name}</h1>
+
+                <h1 className="p-2 text-end text-3xl">
+                  {fraction} / {students.length}
+                </h1>
+              </div>
+              <div className="grid grid-cols-2 gap-2 bg-kleren sm:grid-cols-3 md:grid-cols-4">
+                {students.map(
+                  (student: { id: string; name: string; done: boolean }) => (
+                    <Student done={student.done} key={student.id}>
+                      <h1 className="w-full text-center text-2xl">
+                        {student.name}
+                      </h1>
+                    </Student>
+                  )
+                )}
+              </div>
+            </>
           )}
         </div>
       </div>

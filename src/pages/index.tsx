@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 import Layout from "../components/layout/page";
 
@@ -17,12 +18,21 @@ const Home: NextPage = () => {
       <Layout>
         <>
           <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
-          <p className="mt-5 max-w-3xl">
+          <p className="mt-5 max-w-3xl p-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
             assumenda alias doloribus sint non, esse quos sit facere a veritatis
             maxime autem vitae commodi numquam! Repellat vero fugiat consectetur
             consequuntur.
           </p>
+
+          <div className="flex gap-2">
+            <Link className="button font-semibold " href="/class">
+              <button className="text-white">Class</button>
+            </Link>
+            <Link className="button font-semibold " href="/admin">
+              <button className="text-white">Admin</button>
+            </Link>
+          </div>
         </>
       </Layout>
     </>
