@@ -18,18 +18,18 @@ const Home: NextPage = () => {
       <Layout>
         <>
           <h1 className="text-center text-7xl font-bold">Huiswerk</h1>
-          <p className="mt-5 max-w-3xl p-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            assumenda alias doloribus sint non, esse quos sit facere a veritatis
-            maxime autem vitae commodi numquam! Repellat vero fugiat consectetur
-            consequuntur.
+          <p className="my-5 max-w-2xl p-2">
+            Dutch for the word Homework. I don&apos;t know why I decided that.
+            This is a program for keeping track of students on homework. Sounds
+            evil. This website is like a checklist so that you don&apos;t have
+            to type the emojis.
           </p>
 
           <div className="flex gap-2">
-            <Link className="button font-semibold " href="/class">
+            <Link className="button " href="/class">
               <button className="text-white">Class</button>
             </Link>
-            <Link className="button font-semibold " href="/admin">
+            <Link className="button " href="/admin">
               <button className="text-white">Admin</button>
             </Link>
           </div>

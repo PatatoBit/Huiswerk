@@ -3,24 +3,26 @@ import { db } from "./firebase";
 
 interface ClassData {
   id: string;
-  name: string;
-  students: Array<{
+  data: {
     name: string;
-    done: boolean;
-  }>;
+    students: Array<{
+      name: string;
+      done: boolean;
+    }>;
+  };
 }
 
-export async function GetClasses(): Promise<ClassData[]> {
+export async function GetClasses() {
   const q = query(collection(db, "class"));
   const querySnapshot = await getDocs(q);
 
   const data: ClassData[] = [];
 
   querySnapshot.forEach((doc) => {
-    data.push(doc.data() as ClassData);
+    data.push({ id: doc.id, data: doc.data() as ClassData["data"] });
   });
 
-  return await data;
+  return await [...data];
 }
 
 export function ToggleStudent(collection: string, name: string) {
